@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "nuxt",
     "dev:mobile": "nuxt -H 0.0.0.0",
+    "dev:css": "tailwindcss -o assets/css/tailwind.css --watch",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
