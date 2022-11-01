@@ -13,10 +13,10 @@ export const mutations = {
 export const actions = {
   async GET_CURRENCIES({ commit }) {
     try {
-      const data = await this.$axios.get(
+      const data = await this.$axios.$get(
         "https://www.cbr-xml-daily.ru/daily_json.js"
       );
-      commit("SET_CURRENCIES", data.data.Valute);
+      commit("SET_CURRENCIES", data.Valute);
     } catch (error) {
       console.log(error);
     }

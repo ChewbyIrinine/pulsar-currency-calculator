@@ -24,22 +24,44 @@
         <div class="mb-5">
           <label class="flex flex-col gap-3 font-semibold text-14">
             Валюта 1
-            <input
-              class="h-12 p-5 border border-solid border-text-gray-100 rounded-md"
+            <select
+              class="h-12 px-5 border border-solid border-text-gray-100 rounded-md"
               type="text"
-              placeholder="Введите название или код"
-            />
+              v-model="firstCurrency"
+            >
+              <option class="hidden" value="" disabled selected>
+                Введите название или код
+              </option>
+              <option
+                v-for="currency in getCurrencies"
+                :key="currency.ID"
+                :value="currency"
+              >
+                {{ currency.CharCode }} {{ currency.Name }}
+              </option>
+            </select>
           </label>
         </div>
 
         <div class="mb-5">
           <label class="flex flex-col gap-3 font-semibold text-14">
             Валюта 2
-            <input
-              class="h-12 p-5 border border-solid border-text-gray-100 rounded-md"
+            <select
+              class="h-12 px-5 border border-solid border-text-gray-100 rounded-md"
               type="text"
-              placeholder="Введите название или код"
-            />
+              v-model="secondCurrency"
+            >
+              <option class="hidden" value="" disabled selected>
+                Введите название или код
+              </option>
+              <option
+                v-for="currency in getCurrencies"
+                :key="currency.ID"
+                :value="currency"
+              >
+                {{ currency.CharCode }} {{ currency.Name }}
+              </option>
+            </select>
           </label>
         </div>
 
@@ -50,6 +72,7 @@
               class="h-12 p-5 border border-solid border-text-gray-100 rounded-md"
               type="text"
               placeholder="Введите число"
+              v-model="amount"
             />
           </label>
         </div>
@@ -58,7 +81,7 @@
         class="flex items-center gap-5 px-7 py-5 mb-4 bg-secondary rounded-2xl"
       >
         <img src="@/assets/svg/info.svg" alt="info" />
-        <p class="font-semibold text-14 text-primary">Итого: ...</p>
+        <p class="font-semibold text-14 text-primary">Итого: {{ getTotal }}</p>
       </section>
       <section
         class="px-4 py-7 bg-secondary border border-solid border-text-gray-100 rounded-2xl"
@@ -154,9 +177,37 @@
         >info@example.ru
       </a>
     </footer>
-    <button @click="$store.dispatch('currencies/GET_CURRENCIES')">
-      GET_CURRENCIES
-    </button>
-    {{ $store.state.currencies.currencies }}
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      firstCurrency: {},
+      secondCurrency: {},
+      amount: 0,
+    };
+  },
+
+  computed: {
+    getCurrencies() {
+      return this.$store.state.currencies.currencies;
+    },
+
+    getTotal() {
+      return (
+        (this.firstCurrency.Value /
+          this.secondCurrency.Value /
+          this.firstCurrency.Nominal) *
+          this.secondCurrency.Nominal *
+          this.amount || "..."
+      );
+    },
+  },
+
+  created() {
+    this.$store.dispatch("currencies/GET_CURRENCIES");
+  },
+};
+</script>
