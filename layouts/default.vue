@@ -16,3 +16,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+body {
+  @apply font-roboto text-text-main;
+}
+</style>

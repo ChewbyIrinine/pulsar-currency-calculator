@@ -62,7 +62,7 @@
       <section
         class="flex items-center gap-5 px-7 py-5 mb-4 bg-secondary rounded-2xl"
       >
-        <img src="@/assets/svg/info.svg" alt="info" />
+        <img src="@/assets/svg/info-red.svg" alt="info-red" />
         <p class="font-semibold text-14 text-primary">Итого: {{ getTotal }}</p>
       </section>
       <section
@@ -73,37 +73,37 @@
           eiusmod tempor:
         </h2>
         <ul class="my-8 space-y-5">
-          <li class="flex gap-2 font-medium text-14">
+          <li class="flex gap-2 text-14">
             <img src="@/assets/svg/mark.svg" alt="mark" />
             Incididunt ut labore et dolore magna aliqua
           </li>
 
-          <li class="flex gap-2 font-medium text-14">
+          <li class="flex gap-2 text-14">
             <img src="@/assets/svg/mark.svg" alt="mark" />
             Incididunt ut labore et
           </li>
 
-          <li class="flex gap-2 font-medium text-14">
+          <li class="flex gap-2 text-14">
             <img src="@/assets/svg/mark.svg" alt="mark" />
             Incididunt ut labore et dolore
           </li>
 
-          <li class="flex gap-2 font-medium text-14">
+          <li class="flex gap-2 text-14">
             <img src="@/assets/svg/mark.svg" alt="mark" />
             Labore et dolore
           </li>
 
-          <li class="flex gap-2 font-medium text-14">
+          <li class="flex gap-2 text-14">
             <img src="@/assets/svg/mark.svg" alt="mark" />
             Incididunt ut
           </li>
 
-          <li class="flex gap-2 font-medium text-14">
+          <li class="flex gap-2 text-14">
             <img src="@/assets/svg/mark.svg" alt="mark" />
             Incididunt ut labore et dolore
           </li>
 
-          <li class="flex gap-2 font-medium text-14">
+          <li class="flex gap-2 text-14">
             <img src="@/assets/svg/mark.svg" alt="mark" />
             Incididunt ut labore
           </li>
@@ -147,15 +147,15 @@
       <h2 class="font-bold text-primary mb-5">
         Нужна помощь?<br />Мы поможем! Просто свяжитесь с нами.
       </h2>
-      <p class="font-medium text-12 mb-7">
+      <p class="text-12 mb-7">
         Наши специалисты с радостью ответят на все ваши вопросы и дадут
         профессиональную консультацию по товарам.
       </p>
       <a class="font-semibold text-26 text-primary mb-4" href="tel:+78008889028"
         >8 (800) 888-90-28
       </a>
-      <p class="font-medium text-12 mb-2">ИЛИ</p>
-      <a class="font-medium text-18 text-primary" href="mailto:info@example.ru"
+      <p class="text-12 mb-2">ИЛИ</p>
+      <a class="text-18 text-primary" href="mailto:info@example.ru"
         >info@example.ru
       </a>
     </footer>
