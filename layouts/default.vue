@@ -1,11 +1,18 @@
 <template>
-    <div>
-        <Nuxt />
-    </div>
+  <div>
+    <AppHeader />
+    <Nuxt />
+  </div>
 </template>
 
-<style lang="scss">
-body {
-    @apply font-roboto text-text-main;
-}
-</style>
+<script>
+import AppHeader from "@/components/AppHeader";
+
+export default {
+  name: "Default",
+
+  components: {
+    AppHeader,
+  },
+};
+</script>
