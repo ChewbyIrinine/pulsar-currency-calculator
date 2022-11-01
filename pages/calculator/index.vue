@@ -154,5 +154,9 @@
         >info@example.ru
       </a>
     </footer>
+    <button @click="$store.dispatch('currencies/GET_CURRENCIES')">
+      GET_CURRENCIES
+    </button>
+    {{ $store.state.currencies.currencies }}
   </div>
 </template>
