@@ -9,41 +9,19 @@
       <div class="flex flex-col md:flex-row gap-x-7 xl:gap-x-10 gap-y-4">
         <section class="md:w-1/2">
           <FormLabel class="mb-5 md:mb-8" text="Валюта 1">
-            <select
-              class="h-12 px-5 border border-solid border-text-gray-100 rounded-md"
-              type="text"
-              v-model="firstCurrency"
-            >
-              <option class="hidden" :value="null" disabled selected>
-                Введите название или код
-              </option>
-              <option
-                v-for="currency in getCurrencies"
-                :key="currency.ID"
-                :value="currency"
-              >
-                {{ currency.CharCode }} {{ currency.Name }}
-              </option>
-            </select>
+            <CurrencySelect
+              :currency-data="getCurrencies"
+              placeholder="Введите название или код"
+              v-model="firstCurrencyID"
+            />
           </FormLabel>
 
           <FormLabel class="mb-5 md:mb-8" text="Валюта 2">
-            <select
-              class="h-12 px-5 border border-solid border-text-gray-100 rounded-md"
-              type="text"
-              v-model="secondCurrency"
-            >
-              <option class="hidden" :value="null" disabled selected>
-                Введите название или код
-              </option>
-              <option
-                v-for="currency in getCurrencies"
-                :key="currency.ID"
-                :value="currency"
-              >
-                {{ currency.CharCode }} {{ currency.Name }}
-              </option>
-            </select>
+            <CurrencySelect
+              :currency-data="getCurrencies"
+              placeholder="Введите название или код"
+              v-model="secondCurrencyID"
+            />
           </FormLabel>
 
           <FormLabel class="mb-5 md:mb-6 xl:mb-5" text="Количество">
@@ -181,34 +159,52 @@
 
 <script>
 import FormLabel from "@/components/FormLabel";
+import CurrencySelect from "@/components/CurrencySelect";
 
 export default {
   name: "Home",
 
   components: {
     FormLabel,
+    CurrencySelect,
   },
 
   data() {
     return {
-      firstCurrency: null,
-      secondCurrency: null,
+      firstCurrencyID: null,
+      secondCurrencyID: null,
       amount: null,
     };
   },
 
   computed: {
     getCurrencies() {
-      return this.$store.state.currencies.currencies;
+      return Object.values(this.$store.state.currencies.currencies);
     },
 
     getTotal() {
       return (
-        (this.firstCurrency?.Value /
-          this.secondCurrency?.Value /
-          this.firstCurrency?.Nominal) *
-          this.secondCurrency?.Nominal *
-          this.amount || "..."
+        (
+          (this.getFirstCurrencyData?.Value /
+            this.getSecondsCurrencyData?.Value /
+            this.getFirstCurrencyData?.Nominal) *
+          this.getSecondsCurrencyData?.Nominal *
+          this.amount
+        ).toFixed(4) || "..."
+      );
+    },
+
+    getFirstCurrencyData() {
+      return (
+        this.getCurrencies.find((item) => item.ID === this.firstCurrencyID) ||
+        {}
+      );
+    },
+
+    getSecondsCurrencyData() {
+      return (
+        this.getCurrencies.find((item) => item.ID === this.secondCurrencyID) ||
+        {}
       );
     },
   },
