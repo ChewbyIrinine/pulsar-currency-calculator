@@ -691,6 +691,10 @@ video {
   width: 2.5rem;
 }
 
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -731,6 +735,10 @@ video {
 
 .gap-y-8 {
   row-gap: 2rem;
+}
+
+.gap-y-7 {
+  row-gap: 1.75rem;
 }
 
 .gap-y-6 {
@@ -966,8 +974,8 @@ video {
     display: none;
   }
 
-  .md\:w-80 {
-    width: 20rem;
+  .md\:w-1\/2 {
+    width: 50%;
   }
 
   .md\:w-2\/3 {
@@ -980,10 +988,6 @@ video {
 
   .md\:w-full {
     width: 100%;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
   }
 
   .md\:grid-cols-2 {
@@ -1020,6 +1024,11 @@ video {
   .md\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .md\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .md\:py-8 {
@@ -1068,6 +1077,10 @@ video {
     font-size: 16px;
   }
 
+  .md\:text-15 {
+    font-size: 15px;
+  }
+
   .md\:text-13 {
     font-size: 13px;
   }
@@ -1086,25 +1099,90 @@ video {
 }
 
 @media (min-width: 1280px) {
+  .xl\:mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .xl\:mb-5 {
+    margin-bottom: 1.25rem;
+  }
+
   .xl\:mb-10 {
     margin-bottom: 2.5rem;
+  }
+
+  .xl\:mb-6 {
+    margin-bottom: 1.5rem;
   }
 
   .xl\:mb-28 {
     margin-bottom: 7rem;
   }
 
+  .xl\:grid {
+    display: grid;
+  }
+
+  .xl\:h-full {
+    height: 100%;
+  }
+
+  .xl\:w-1\/2 {
+    width: 50%;
+  }
+
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:gap-4 {
+    gap: 1rem;
   }
 
   .xl\:gap-8 {
     gap: 2rem;
   }
 
+  .xl\:gap-x-10 {
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
+  }
+
+  .xl\:gap-x-3 {
+    -moz-column-gap: 0.75rem;
+         column-gap: 0.75rem;
+  }
+
+  .xl\:rounded-none {
+    border-radius: 0px;
+  }
+
+  .xl\:rounded-tr-3xl {
+    border-top-right-radius: 1.5rem;
+  }
+
+  .xl\:rounded-bl-3xl {
+    border-bottom-left-radius: 1.5rem;
+  }
+
   .xl\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+
+  .xl\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .xl\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .xl\:py-14 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 
   .xl\:py-10 {
@@ -1114,6 +1192,10 @@ video {
 
   .xl\:pt-9 {
     padding-top: 2.25rem;
+  }
+
+  .xl\:pb-6 {
+    padding-bottom: 1.5rem;
   }
 
   .xl\:pb-12 {
@@ -1130,6 +1212,30 @@ video {
 
   .xl\:text-16 {
     font-size: 16px;
+  }
+
+  .xl\:text-14 {
+    font-size: 14px;
+  }
+
+  .xl\:text-30 {
+    font-size: 30px;
+  }
+
+  .xl\:text-13 {
+    font-size: 13px;
+  }
+
+  .xl\:text-40 {
+    font-size: 40px;
+  }
+
+  .xl\:text-18 {
+    font-size: 18px;
+  }
+
+  .xl\:text-24 {
+    font-size: 24px;
   }
 }
 
