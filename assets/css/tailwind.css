@@ -920,10 +920,6 @@ video {
     margin-bottom: 2.75rem;
   }
 
-  .md\:mb-28 {
-    margin-bottom: 7rem;
-  }
-
   .md\:hidden {
     display: none;
   }
@@ -991,12 +987,26 @@ video {
     margin-bottom: 2.5rem;
   }
 
+  .xl\:mb-28 {
+    margin-bottom: 7rem;
+  }
+
   .xl\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .xl\:gap-8 {
     gap: 2rem;
+  }
+
+  .xl\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .xl\:py-10 {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
   }
 
   .xl\:pt-9 {
@@ -1013,5 +1023,41 @@ video {
 
   .xl\:text-15 {
     font-size: 15px;
+  }
+
+  .xl\:text-16 {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .\32xl\:mb-24 {
+    margin-bottom: 6rem;
+  }
+
+  .\32xl\:py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .\32xl\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .\32xl\:pt-8 {
+    padding-top: 2rem;
+  }
+
+  .\32xl\:pb-8 {
+    padding-bottom: 2rem;
+  }
+
+  .\32xl\:text-16 {
+    font-size: 16px;
+  }
+
+  .\32xl\:text-36 {
+    font-size: 36px;
   }
 }
