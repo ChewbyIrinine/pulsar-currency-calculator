@@ -1,5 +1,5 @@
 <template>
-  <header class="px-8 md:px-10 py-3 md:py-2 bg-gray">
+  <header class="container py-3 md:py-2 bg-gray">
     <ul class="flex gap-7">
       <li>
         <nuxt-link to="/" class="font-semibold text-12 text-text-gray-700"

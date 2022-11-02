@@ -5,18 +5,22 @@
       :src="`/_nuxt/assets/svg/currency-${getIconColor(index)}.svg`"
       :alt="`currency-${getIconColor(index)}`"
     />
-    <h6 class="mb-5 md:mb-7 font-bold text-17 md:text-18 text-primary">
+    <h6
+      class="mb-5 md:mb-7 font-bold text-17 md:text-18 xl:text-20 text-primary"
+    >
       {{ currencyData.CharCode }}
     </h6>
-    <p class="mb-7 md:mb-10 text-14 text-text-gray-950">
+    <p class="mb-7 md:mb-10 text-14 xl:text-15 text-text-gray-950">
       {{ currencyData.Name }}
     </p>
-    <ul class="space-y-4 md:space-y-6">
-      <li class="flex gap-2 font-semibold text-14 text-text-gray-900">
+    <ul
+      class="space-y-4 md:space-y-6 font-semibold text-14 xl:text-15 text-text-gray-900"
+    >
+      <li class="flex gap-2">
         <img src="@/assets/svg/mark.svg" alt="mark" />
         Номинал: {{ currencyData.Nominal }}
       </li>
-      <li class="flex gap-2 font-semibold text-14 text-text-gray-900">
+      <li class="flex gap-2">
         <img src="@/assets/svg/mark.svg" alt="mark" />
         Курс: {{ currencyData.Value }}
       </li>
