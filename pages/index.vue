@@ -8,61 +8,52 @@
       </h1>
       <div class="flex flex-col md:flex-row gap-x-7 xl:gap-x-10 gap-y-4">
         <section class="md:w-1/2">
-          <div class="mb-5 md:mb-8">
-            <label class="flex flex-col gap-3 xl:gap-4 font-semibold text-14">
-              Валюта 1
-              <select
-                class="h-12 px-5 border border-solid border-text-gray-100 rounded-md"
-                type="text"
-                v-model="firstCurrency"
+          <FormLabel class="mb-5 md:mb-8" text="Валюта 1">
+            <select
+              class="h-12 px-5 border border-solid border-text-gray-100 rounded-md"
+              type="text"
+              v-model="firstCurrency"
+            >
+              <option class="hidden" :value="null" disabled selected>
+                Введите название или код
+              </option>
+              <option
+                v-for="currency in getCurrencies"
+                :key="currency.ID"
+                :value="currency"
               >
-                <option class="hidden" :value="null" disabled selected>
-                  Введите название или код
-                </option>
-                <option
-                  v-for="currency in getCurrencies"
-                  :key="currency.ID"
-                  :value="currency"
-                >
-                  {{ currency.CharCode }} {{ currency.Name }}
-                </option>
-              </select>
-            </label>
-          </div>
+                {{ currency.CharCode }} {{ currency.Name }}
+              </option>
+            </select>
+          </FormLabel>
 
-          <div class="mb-5 md:mb-8">
-            <label class="flex flex-col gap-3 font-semibold text-14">
-              Валюта 2
-              <select
-                class="h-12 px-5 border border-solid border-text-gray-100 rounded-md"
-                type="text"
-                v-model="secondCurrency"
+          <FormLabel class="mb-5 md:mb-8" text="Валюта 2">
+            <select
+              class="h-12 px-5 border border-solid border-text-gray-100 rounded-md"
+              type="text"
+              v-model="secondCurrency"
+            >
+              <option class="hidden" :value="null" disabled selected>
+                Введите название или код
+              </option>
+              <option
+                v-for="currency in getCurrencies"
+                :key="currency.ID"
+                :value="currency"
               >
-                <option class="hidden" :value="null" disabled selected>
-                  Введите название или код
-                </option>
-                <option
-                  v-for="currency in getCurrencies"
-                  :key="currency.ID"
-                  :value="currency"
-                >
-                  {{ currency.CharCode }} {{ currency.Name }}
-                </option>
-              </select>
-            </label>
-          </div>
+                {{ currency.CharCode }} {{ currency.Name }}
+              </option>
+            </select>
+          </FormLabel>
 
-          <div class="mb-5 md:mb-6 xl:mb-5">
-            <label class="flex flex-col gap-3 font-semibold text-14">
-              Количество
-              <input
-                class="h-12 p-5 border border-solid border-text-gray-100 rounded-md"
-                type="text"
-                placeholder="Введите число"
-                v-model="amount"
-              />
-            </label>
-          </div>
+          <FormLabel class="mb-5 md:mb-6 xl:mb-5" text="Количество">
+            <input
+              class="h-12 p-5 border border-solid border-text-gray-100 rounded-md"
+              type="text"
+              placeholder="Введите число"
+              v-model="amount"
+            />
+          </FormLabel>
           <div
             class="flex items-center gap-5 px-7 md:px-8 py-5 md:py-8 bg-secondary rounded-2xl"
           >
@@ -189,8 +180,14 @@
 </template>
 
 <script>
+import FormLabel from "@/components/FormLabel";
+
 export default {
   name: "Home",
+
+  components: {
+    FormLabel,
+  },
 
   data() {
     return {
